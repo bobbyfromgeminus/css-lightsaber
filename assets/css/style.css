@@ -6,7 +6,8 @@
 }
 
 body {
-    background-color: #000000;
+    background: rgb(37,37,37);
+    background: radial-gradient(circle, rgba(50,50,50,1) 0%, rgba(0,0,0,1) 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -15,6 +16,7 @@ body {
 
 .ls-container {
     display: flex;
+    width: 675px;
 }
 
 .ls-grip {
@@ -31,11 +33,28 @@ body {
 }
 
 .ls-grip .grip-02 {
-    width: 35%;
+    width: 30%;
     height: 20px;
     margin: 3px 0;
     background: rgb(100,100,100);
     background: linear-gradient(180deg, rgba(100,100,100,1) 0%, rgba(186,186,186,1) 50%, rgba(100,100,100,1) 100%);
+}
+
+.ls-grip .grip-button {
+    width: 5%;
+    height: 20px;
+    margin: 3px 0;
+    cursor: pointer; 
+}
+
+.button-on {
+    background: rgb(255, 255, 255);
+    background: linear-gradient(180deg, rgb(40,40,40) 0%, rgb(40,40,40) 25%, rgba(255, 255, 255,1) 50%, rgb(40,40,40) 75%, rgba(40,40,40) 100%);
+}
+
+.button-off {
+    background: rgb(40, 40, 40);
+    background: linear-gradient(180deg, rgb(40,40,40) 0%, rgb(100, 100, 100) 50%, rgba(40,40,40) 100%);
 }
 
 .ls-grip .grip-03 {
@@ -63,15 +82,38 @@ body {
 }
 
 .ls-blade {
-    width: 525px;
     height: 14px;
     margin: 6px 0;
     background-color: white;
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
-    box-shadow: 0 0 26px 5px rgb(255, 255, 255);
     box-shadow: 0 0 26px 5px rgb(10, 199, 3);
-    box-shadow: 0 0 26px 5px rgb(23, 123, 236);
-    box-shadow: 0 0 26px 5px rgb(199, 4, 183);
-    box-shadow: 0 0 26px 5px rgb(207, 24, 24);
+}
+
+.open {
+    width: 525px;
+    animation: bladein .7s 1 ease-in-out;
+}
+
+.close {
+    width: 0px;
+    animation: bladeout .7s 1 ease-in-out;
+}
+
+@keyframes bladein {
+    from {
+        width: 0px;
+    } 
+    to {
+        width: 525px;
+    }
+}
+
+@keyframes bladeout {
+    from {
+        width: 525px;
+    } 
+    to {
+        width: 0px;
+    }
 }
