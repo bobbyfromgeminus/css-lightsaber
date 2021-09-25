@@ -18,8 +18,9 @@ const bladeController = () => {
     }
 }
 
-
+// Eseménykezelő - A button elem click eseménye meghívja a bladeController függvényt
 const buttonClick = button.addEventListener('click', bladeController);
 buttonClick();
 
+// IIFE (Immediately Invoked Function Expression - Azonnal meghívott föggvény kifejezés)
 // (button.addEventListener('click', bladeController))();
