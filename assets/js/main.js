@@ -6,24 +6,20 @@ let isOpened = false;
 
 const bladeController = () => {
     if (isOpened === false) {
-        // change blade state
+        button.classList.replace('button-off', 'button-on');
         blade.classList.remove('close');
         blade.classList.add('open');
-        // change button color
-        button.classList.remove('button-off');
-        button.classList.add('button-on');
         isOpened = true;
     } else {
-        // change blade state
+        button.classList.replace('button-on', 'button-off');
         blade.classList.remove('open');
         blade.classList.add('close');
-        // change button color
-        button.classList.remove('button-on');
-        button.classList.add('button-off');
         isOpened = false;
     }
 }
 
 
-const bladeClick = button.addEventListener('click', bladeController);
-bladeClick();
+const buttonClick = button.addEventListener('click', bladeController);
+buttonClick();
+
+// (button.addEventListener('click', bladeController))();

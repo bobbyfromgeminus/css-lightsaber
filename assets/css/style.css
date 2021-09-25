@@ -33,7 +33,7 @@ body {
 }
 
 .ls-grip .grip-02 {
-    width: 30%;
+    width: 32%;
     height: 20px;
     margin: 3px 0;
     background: rgb(100,100,100);
@@ -41,24 +41,24 @@ body {
 }
 
 .ls-grip .grip-button {
-    width: 5%;
+    width: 6%;
     height: 20px;
     margin: 3px 0;
-    cursor: pointer; 
-}
-
-.button-on {
-    background: rgb(255, 255, 255);
-    background: linear-gradient(180deg, rgb(40,40,40) 0%, rgb(40,40,40) 25%, rgba(255, 255, 255,1) 50%, rgb(40,40,40) 75%, rgba(40,40,40) 100%);
+    cursor: pointer;
 }
 
 .button-off {
-    background: rgb(40, 40, 40);
-    background: linear-gradient(180deg, rgb(40,40,40) 0%, rgb(100, 100, 100) 50%, rgba(40,40,40) 100%);
+    background: rgb(30,30,30);
+    background: linear-gradient(180deg, rgba(30,30,30,1) 0%, rgba(70,70,70,1) 50%, rgba(30,30,30,1) 100%);
+}
+
+.button-on {
+    background: rgb(30,30,30);
+    background: linear-gradient(180deg, rgba(10,10,10,1) 25%, rgba(220,220,220,1) 50%, rgba(30,30,30,1) 75%);
 }
 
 .ls-grip .grip-03 {
-    width: 35%;
+    width: 32%;
     height: 20px;
     margin: 3px 0;
     background: rgb(40,40,40);
@@ -87,33 +87,48 @@ body {
     background-color: white;
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
-    box-shadow: 0 0 26px 5px rgb(10, 199, 3);
 }
 
 .open {
-    width: 525px;
     animation: bladein .7s 1 ease-in-out;
+    width: 525px;
+    box-shadow: 0 0 26px 5px rgba(10, 199, 3, 1);
 }
 
 .close {
-    width: 0px;
     animation: bladeout .7s 1 ease-in-out;
+    width: 0px;
+    box-shadow: 0 0 26px 5px rgba(10, 199, 3, 0);
 }
 
 @keyframes bladein {
-    from {
-        width: 0px;
-    } 
-    to {
-        width: 525px;
+    0% {
+      width: 0px;
+      box-shadow: 0 0 26px 5px rgba(10, 199, 3, 0);
+    }
+
+    33% {
+        box-shadow: 0 0 26px 5px rgba(10, 199, 3, 1);
+    }
+  
+    100% {
+      width: 525px;
+      box-shadow: 0 0 26px 5px rgba(10, 199, 3, 1);
     }
 }
 
 @keyframes bladeout {
-    from {
-        width: 525px;
-    } 
-    to {
-        width: 0px;
+    0% {
+      width: 525px;
+      box-shadow: 0 0 26px 5px rgba(10, 199, 3, 1);
+    }
+
+    66% {
+        box-shadow: 0 0 26px 5px rgba(10, 199, 3, 0);
+    }
+  
+    100% {
+      width: 0px;
+      box-shadow: 0 0 26px 5px rgba(10, 199, 3, 0);
     }
 }
